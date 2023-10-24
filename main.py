@@ -3,6 +3,7 @@ import streamlit as st
 import pandas as pd
 from io import BytesIO
 from io import StringIO
+from PIL import Image
 
 st.title("st.title(문자열): 제목")
 st.header("st.header(문자열): 헤더")
@@ -114,3 +115,13 @@ uploaded_file = st.file_uploader("MP3 파일을 선택하세요.", type="mp3")
 if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     st.write(bytes_data[:100])
+    
+st.title("스트림릿의 이미지 표시 사용 예")
+st.subheader("1. 깃허브에서 이미지 파일 표시")
+image_file='/goldhwi/jpg'
+image_local = Image.open(image_file)
+st.image(image_local, width=350, caption = "금휘사진")
+
+st.subheader("웹 상에 있는 이미지 표시")
+image_url = "https://upload.tgd.kr/20231022/0f02662b87fccc4b01654510eec7751a.PNG"
+st.image(image_url, width=350, caption="웹 상에 있는 이미지")
