@@ -1,5 +1,8 @@
 import streamlit as st
 
+import pandas as pd
+from io import BytesIO
+
 st.title("st.title(문자열): 제목")
 st.header("st.header(문자열): 헤더")
 st.subheader("st.subheader(문자열): 서브헤더")
@@ -24,3 +27,35 @@ if clicked:
 else:
     st.write('버튼 1을 클릭하지 않았습니다.')
 
+st.title("스트림릿의 다운로드 버튼 사용 예")
+st.subheader("텍스트 파일 다운로드 예제")
+
+folder='C:/Users/com/Desktop/'
+
+with open(folder + "UNIV.txt", encoding='utf-8') as text_file:
+    text_data = text_file.read()
+    st.download_button(
+        label = "텍스트 파일 다운로드",
+        data = text_data,
+        file_name = "UNIV.txt"
+    )
+
+st.subheader("이미지 파일 다운로드 예제")
+
+with open(folder + "kfc.jpg") as image_file:
+    st.download_button(
+        label = "이미지 파일 다운로드",
+        data = image_file,
+        file_name = "sample_image.png",
+        mime="image/png"
+    )
+    
+st.subheader("오디오 파일 다운로드 예제")
+
+with open(folder + "audio.mp3", 'rb') as audio_file:
+    st.download_button(
+        label = "오디오 파일 다운로드",
+        data = audio_file,
+        file_name = "오디오 파일 예제.mp3",
+        mime = "audio/mpeg"
+    )
