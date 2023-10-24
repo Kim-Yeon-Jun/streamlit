@@ -118,7 +118,7 @@ if uploaded_file is not None:
     
 st.title("스트림릿의 이미지 표시 사용 예")
 st.subheader("1. 깃허브에서 이미지 파일 표시")
-image_file='/goldhwi/jpg'
+image_file='https://github.com/Kim-Yeon-Jun/streamlit/blob/main/goldwhi.jpg'
 image_local = Image.open(image_file)
 st.image(image_local, width=350, caption = "금휘사진")
 
