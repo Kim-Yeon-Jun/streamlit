@@ -59,3 +59,14 @@ with open(folder + "audio.mp3", 'rb') as audio_file:
         file_name = "오디오 파일 예제.mp3",
         mime = "audio/mpeg"
     )
+    
+st.title("스트림릿의 체크박스 사용 예")
+
+checked1 = st.checkbox('체크박스1')
+st.write('체크박스 1 상태', checked1)
+
+if checked1:
+    st.write('체크박스 1을 체크했습니다.')
+else:
+    st.write('체크박스 1을 체그하지 않았습니다.')
+    
