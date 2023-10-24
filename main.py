@@ -80,7 +80,11 @@ st.title("라디오 버튼")
 radio1_options = ['10','20','30','40','50']
 radio1_selected = st.radio('(5 x 5 + 5)은 얼마인가요?', radio1_options) #질문, 선택 옵션 - 선택한 값이 변수에 저장됨
 st.write('**선택한 답**', radio1_selected)
-
+if radio1_selected == '30':
+    st.write('정답입니다!')
+else:
+    st.write("틀렸습니다.ㅠㅠ")
+    
 radio2_options = ('마라톤', '축구', '수영', '승마')
 radio2_selected = st.radio('당신이 좋아하는 운동은?', radio2_options, index=2, horizontal=True)
 st.write('**당신의 선택**', radio2_selected)
@@ -90,6 +94,7 @@ st.title("셀렉트 박스")
 selectbox1_options = ['하이든', '모차르트', '베토벤', '슈만']
 your_option1 = st.selectbox('좋아하는 음악가는?', selectbox1_options)
 st.write('**당신의 선택**', your_option1)
+
 
 st.sidebar.title("텍스트 입력")
 user_id = st.sidebar.text_input('아이디(ID) 입력', value="streamlit", max_chars=15) #value : 입력 창 초기에 보이는 문자열. 지정하지 않으면 빈칸으로 출력
@@ -138,3 +143,23 @@ with col2:
     st.video(url_col2)
 
 #배열과 for문을 사용하여 1줄을 여러개로 분할하여 사용하는 것도 가능함.
+
+st.title("세션 상태 사용 예")
+
+if 'count' not in st.session_state:
+    st.session_state['count'] = 0
+
+if 'registered' not in st.session_state:
+    st.session_state['registered'] = []
+
+user_input = st.text_input('이름', value = "이름을 입력하세요.", key='name')
+
+clicked = st.button('등록')
+
+if clicked:
+    st.session_state['count'] = st.session_state['count'] + 1
+    st.write("버튼 입력 회수:", st.session_state['count'])
+    
+    name = st.session_state['name']
+    st.session_state['registered'].append(name)
+    st.write("등록 이름 리스트:", st.session_state['registered'])
