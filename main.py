@@ -94,7 +94,7 @@ user_id = st.text_input('아이디(ID) 입력', value="streamlit", max_chars=15)
 user_password = st.text_input('비밀번호(PW) 입력', value="abcd", type="password")
 
 if user_id == "streamlit":
-    if user_password == "abcd":
+    if user_password == "`1234":
         st.write('로그인 됐습니다. 서비스를 이용할 수 있습니다.')
     else:
         st.write('잘못된 패스워드 입니다. 다시 입력해주세요')
