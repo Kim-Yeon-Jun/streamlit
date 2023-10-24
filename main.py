@@ -123,5 +123,5 @@ if uploaded_file is not None:
 # st.image(image_local, width=350, caption = "금휘사진")
 
 st.subheader("웹 상에 있는 이미지 표시")
-image_url = "https://upload.tgd.kr/20231022/0f02662b87fccc4b01654510eec7751a.PNG"
+image_url = "https://gifsf.com/files/attach/images/19406/502/179/006/5920acdeb6cbe0e79e9acc44c5938474.jpg"
 st.image(image_url, width=350, caption="웹 상에 있는 이미지")
