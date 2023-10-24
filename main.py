@@ -102,11 +102,11 @@ user_password = st.sidebar.text_input('비밀번호(PW) 입력', value="abcd", t
 
 if user_id == "streamlit":
     if user_password == "1234":
-        st.write('로그인 됐습니다. 서비스를 이용할 수 있습니다.')
+        st.sidebar.write('로그인 됐습니다. 서비스를 이용할 수 있습니다.')
     else:
-        st.write('잘못된 패스워드 입니다. 다시 입력해주세요')
+        st.sidebar.write('잘못된 패스워드 입니다. 다시 입력해주세요')
 else:
-    st.wrtie('없는 ID입니다. 회원가입 혹은 올바른 ID를 입력해주세요')
+    st.sidebar.wrtie('없는 ID입니다. 회원가입 혹은 올바른 ID를 입력해주세요')
     
 st.title("스트림릿의 파일 업로더 사용 예")
 
