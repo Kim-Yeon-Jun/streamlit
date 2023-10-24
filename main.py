@@ -91,9 +91,9 @@ selectbox1_options = ['하이든', '모차르트', '베토벤', '슈만']
 your_option1 = st.selectbox('좋아하는 음악가는?', selectbox1_options)
 st.write('**당신의 선택**', your_option1)
 
-st.title("텍스트 입력")
-user_id = st.text_input('아이디(ID) 입력', value="streamlit", max_chars=15) #value : 입력 창 초기에 보이는 문자열. 지정하지 않으면 빈칸으로 출력
-user_password = st.text_input('비밀번호(PW) 입력', value="abcd", type="password")
+st.sidebar.title("텍스트 입력")
+user_id = st.sidebar.text_input('아이디(ID) 입력', value="streamlit", max_chars=15) #value : 입력 창 초기에 보이는 문자열. 지정하지 않으면 빈칸으로 출력
+user_password = st.sidebar.text_input('비밀번호(PW) 입력', value="abcd", type="password")
 
 if user_id == "streamlit":
     if user_password == "1234":
