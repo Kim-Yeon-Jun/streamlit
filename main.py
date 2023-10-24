@@ -163,3 +163,18 @@ if clicked:
     name = st.session_state['name']
     st.session_state['registered'].append(name)
     st.write("등록 이름 리스트:", st.session_state['registered'])
+    
+st.title("콜백 함수 사용 예제")
+
+if 'lang' not in st.session_state:
+    st.session_state['lang'] = '영어'
+
+def button_callback(sel_lang):
+    st.session_state['lang'] = sel_lang
+
+radio_options = ['영어', '프랑스어', '독일어']
+radio_selected = st.radio('한국어를 어떤 언어로 번역하겠습니까?', radio_options)
+
+clicked_lang = st.button('선택', on_click=button_callback, args=[radio_selected])
+
+st.write(f"한국어를 {st.session_state['lang']}로 번역하는 것을 선택했습니다.")
