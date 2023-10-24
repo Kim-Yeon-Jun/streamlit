@@ -125,3 +125,16 @@ if uploaded_file is not None:
 st.subheader("웹 상에 있는 이미지 표시")
 image_url = "https://gifsf.com/files/attach/images/19406/502/179/006/5920acdeb6cbe0e79e9acc44c5938474.jpg"
 st.image(image_url, width=350, caption="웹 상에 있는 이미지")
+
+st.title("스트림릿에서 화면 분할 사용 예")
+[col1, col2] = st.columns(2)
+with col1:
+    st.subheader("유튜브 비디오1")
+    url_col1 = "https://www.youtube.com/watch?v=P9S53OUJHn8&ab_channel=%EA%B8%88%ED%9C%98"
+    st.video(url_col1)
+with col2:
+    st.subheader("유튜브 비디오2")
+    url_col2 = "https://www.youtube.com/watch?v=CDBuALLcAI8&t=335s&ab_channel=%EA%B8%88%ED%9C%98"
+    st.video(url_col2)
+
+#배열과 for문을 사용하여 1줄을 여러개로 분할하여 사용하는 것도 가능함.
