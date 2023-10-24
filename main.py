@@ -106,7 +106,7 @@ if user_id == "streamlit":
     else:
         st.sidebar.write('잘못된 패스워드 입니다. 다시 입력해주세요')
 else:
-    st.sidebar.write('없는 ID입니다. 회원가입 혹은 올바른 ID를 입력해주세요')
+    st.sidebar.write('없는 ID입니다.\n회원가입 혹은 올바른 ID를 입력해주세요')
     
 st.title("스트림릿의 파일 업로더 사용 예")
 
