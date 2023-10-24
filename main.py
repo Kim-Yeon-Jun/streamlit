@@ -76,10 +76,27 @@ else:
 st.title("라디오 버튼")
 
 radio1_options = ['10','20','30','40','50']
-radio1_selected = st.radio('(5 x 5 + 5)은 얼마인가요?', radio1_options)
+radio1_selected = st.radio('(5 x 5 + 5)은 얼마인가요?', radio1_options) #질문, 선택 옵션 - 선택한 값이 변수에 저장됨
 st.write('**선택한 답**', radio1_selected)
 
 radio2_options = ('마라톤', '축구', '수영', '승마')
 radio2_selected = st.radio('당신이 좋아하는 운동은?', radio2_options, index=2, horizontal=True)
 st.write('**당신의 선택**', radio2_selected)
 
+st.title("셀렉트 박스")
+
+selectbox1_options = ['하이든', '모차르트', '베토벤', '슈만']
+your_option1 = st.selectbox('좋아하는 음악가는?', selectbox1_options)
+st.write('**당신의 선택**', your_option1)
+
+st.title("텍스트 입력")
+user_id = st.text_input('아이디(ID) 입력', value="streamlit", max_chars=15)
+user_password = st.text_input('비밀번호(PW) 입력', value="abcd", type="password")
+
+if user_id == "streamlit":
+    if user_password == "abcd":
+        st.write('로그인 됐습니다. 서비스를 이용할 수 있습니다.')
+    else:
+        st.write('잘못된 패스워드 입니다. 다시 입력해주세요')
+else:
+    st.wrtie('없는 ID입니다. 회원가입 혹은 올바른 ID를 입력해주세요')
