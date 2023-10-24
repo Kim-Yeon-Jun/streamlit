@@ -27,38 +27,38 @@ if clicked:
 else:
     st.write('버튼 1을 클릭하지 않았습니다.')
 
-st.title("스트림릿의 다운로드 버튼 사용 예")
-st.subheader("텍스트 파일 다운로드 예제")
+# st.title("스트림릿의 다운로드 버튼 사용 예")
+# st.subheader("텍스트 파일 다운로드 예제")
 
-folder='C:/Users/com/Desktop/'
+# folder='C:/Users/com/Desktop/'
 
-with open(folder + "UNIV.txt", encoding='utf-8') as text_file:
-    text_data = text_file.read()
-    st.download_button(
-        label = "텍스트 파일 다운로드",
-        data = text_data,
-        file_name = "UNIV.txt"
-    )
+# with open(folder + "UNIV.txt", encoding='utf-8') as text_file:
+#     text_data = text_file.read()
+#     st.download_button(
+#         label = "텍스트 파일 다운로드",
+#         data = text_data,
+#         file_name = "UNIV.txt"
+#     )
 
-st.subheader("이미지 파일 다운로드 예제")
+# st.subheader("이미지 파일 다운로드 예제")
 
-with open(folder + "kfc.jpg") as image_file:
-    st.download_button(
-        label = "이미지 파일 다운로드",
-        data = image_file,
-        file_name = "sample_image.png",
-        mime="image/png"
-    )
+# with open(folder + "kfc.jpg") as image_file:
+#     st.download_button(
+#         label = "이미지 파일 다운로드",
+#         data = image_file,
+#         file_name = "sample_image.png",
+#         mime="image/png"
+#     )
     
-st.subheader("오디오 파일 다운로드 예제")
+# st.subheader("오디오 파일 다운로드 예제")
 
-with open(folder + "audio.mp3", 'rb') as audio_file:
-    st.download_button(
-        label = "오디오 파일 다운로드",
-        data = audio_file,
-        file_name = "오디오 파일 예제.mp3",
-        mime = "audio/mpeg"
-    )
+# with open(folder + "audio.mp3", 'rb') as audio_file:
+#     st.download_button(
+#         label = "오디오 파일 다운로드",
+#         data = audio_file,
+#         file_name = "오디오 파일 예제.mp3",
+#         mime = "audio/mpeg"
+#     )
     
 st.title("스트림릿의 체크박스 사용 예")
 
@@ -70,3 +70,12 @@ if checked1:
 else:
     st.write('체크박스 1을 체그하지 않았습니다.')
     
+st.title("라디오 버튼")
+
+radio1_options = ['10','20','30','40','50']
+radio1_selected = st.radio('(5 x 5 + 5)은 얼마인가요?', radio1_options)
+st.write('**선택한 답**', radio1_selected)
+
+radio2_options = ('마라톤', '축구', '수영', '승마')
+radio2_selected = st.radio('당신이 좋아하는 운동은?', radio2_options, index=2, horizontal=True)
+st.write('**당신의 선택**', radio2_selected)
