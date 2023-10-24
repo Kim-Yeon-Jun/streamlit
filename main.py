@@ -2,6 +2,7 @@ import streamlit as st
 
 import pandas as pd
 from io import BytesIO
+from io import StringIO
 
 st.title("st.title(문자열): 제목")
 st.header("st.header(문자열): 헤더")
@@ -90,13 +91,26 @@ your_option1 = st.selectbox('좋아하는 음악가는?', selectbox1_options)
 st.write('**당신의 선택**', your_option1)
 
 st.title("텍스트 입력")
-user_id = st.text_input('아이디(ID) 입력', value="streamlit", max_chars=15)
+user_id = st.text_input('아이디(ID) 입력', value="streamlit", max_chars=15) #value : 입력 창 초기에 보이는 문자열. 지정하지 않으면 빈칸으로 출력
 user_password = st.text_input('비밀번호(PW) 입력', value="abcd", type="password")
 
 if user_id == "streamlit":
-    if user_password == "`1234":
+    if user_password == "1234":
         st.write('로그인 됐습니다. 서비스를 이용할 수 있습니다.')
     else:
         st.write('잘못된 패스워드 입니다. 다시 입력해주세요')
 else:
     st.wrtie('없는 ID입니다. 회원가입 혹은 올바른 ID를 입력해주세요')
+    
+st.title("스트림릿의 파일 업로더 사용 예")
+
+uploaded_file = st.file_uploader("Text 파일을 선택하세요.", type="txt")
+if uploaded_file is not None:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    string_data = stringio.read()
+    st.write(string_data[:100])
+    
+uploaded_file = st.file_uploader("MP3 파일을 선택하세요.", type="mp3")
+if uploaded_file is not None:
+    bytes_data = uploaded_file.getvalue()
+    st.write(bytes_data[:100])
